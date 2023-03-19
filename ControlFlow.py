@@ -281,3 +281,43 @@ else:
   else:
     print("Question: " + question)
     print("Magic 8-Ball's answer: " + answer)
+
+# Shipping costs
+weight = 41.5
+cost_ground = 0
+cost_drone = 0
+premium_ground = 125
+
+# Ground shipping
+if (weight <= 2):
+  cost_ground += weight * 1.5 + 20
+elif (weight > 2) and (weight <= 6):
+  cost_ground += weight * 3 + 20
+elif (weight > 6) and (weight <= 10):
+  cost_ground += weight * 4 + 20
+elif (weight > 10):
+  cost_ground += weight * 4.75 + 20
+
+print("Ground Shipping cost: £", cost_ground)
+print("Flat Ground Shipping cost: £",  premium_ground)
+
+# Drone shipping
+if (weight <= 2):
+  cost_drone += weight * 4.5
+elif (weight > 2) and (weight <= 6):
+  cost_drone += weight * 9
+elif (weight > 6) and (weight <= 10):
+  cost_drone += weight * 12
+elif (weight > 10):
+  cost_drone += weight * 14.25 
+  
+print("Drone shipping cost: £", cost_drone)
+
+cheapest_cost = ""
+
+if (cost_ground > cost_drone):
+  cheapest_cost += "Drone"
+elif (cost_ground < cost_drone):
+  cheapest_cost += "Ground"
+  
+print(cheapest_cost, " shipping is your cheapest option")
