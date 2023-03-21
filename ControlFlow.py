@@ -321,3 +321,12 @@ elif (cost_ground < cost_drone):
   cheapest_cost += "Ground"
   
 print(cheapest_cost, " shipping is your cheapest option")
+
+# Syntax errors
+# SyntaxError means there is something wrong with the way your program is written — punctuation that does not belong, a command where it is not expected, or a missing parenthesis can all trigger a SyntaxError
+
+# A NameError is reported by the Python interpreter when it detects a variable that is unknown.
+# This can occur if a variable is used before it has been assigned a value or if a variable name is spelled differently than the point at which it was defined. The Python interpreter will display the line of code where the NameError was detected and indicate which name is found that was not defined.
+
+# A TypeError is reported by the Python interpreter when an operation is applied to a variable of an inappropriate type.
+# This can occur in Python when one attempts to use an operator on something of the incorrect type.
