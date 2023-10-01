@@ -75,3 +75,49 @@ heights = [["Noelle", 61], ["Ali", 70], ["Sam", 67]]
 #Access the sublist at index 0, and then access the 1st index of that sublist. 
 noelles_height = heights[0][1] 
 print(noelles_height) # output: 61
+# exercises
+class_name_test = [["Jenny", 90], ["Alexus", 85.5], ["Sam", 83], ["Ellie", 101.5]]
+print(class_name_test)
+
+sams_score = class_name_test[2][1]
+print(sams_score)
+# access ellies score using negative indices
+ellies_score = class_name_test[-1][-1]
+print(ellies_score)
+
+# Modifying 2d lists
+class_name_hobbies = [["Jenny", "Breakdancing"], ["Alexus", "Photography"], ["Grace", "Soccer"]]
+# "Jenny" changed their mind and is now more interested in "Meditation"
+# To change a value in a two-dimensional list, reassign the value using the specific index
+# The list of Jenny is at index 0. The hobby is at index 1. 
+class_name_hobbies[0][1] = "Meditation"
+print(class_name_hobbies) # output = [["Jenny", "Meditation"], ["Alexus", "Photography"], ["Grace", "Soccer"]]
+
+# create 2d list
+incoming_class = [["Kenny", "American", 9], ["Tanya", "Ukrainian", 9], ["Madison", "Indian", 7]]
+print(incoming_class)
+# modify madisons grade - positive index
+incoming_class[2][2] = 8
+print(incoming_class)
+# modify kennys name - negative index
+incoming_class[-3][-3] = "Ken"
+print(incoming_class)
+
+# Review
+first_names = ["Ainsley", "Ben", "Chani", "Depak"]
+preferred_size = ["Small", "Large", "Medium"]
+# add a size for depak
+preferred_size.append("Medium")
+print(preferred_size)
+# create new list
+customer_data = [["Ainsley","Small",True], ["Ben", "Large", False], ["Chani", "Medium", True], ["Depak", "Medium", False]]
+print(customer_data)
+# change chanis shipping
+customer_data[2][2] = False
+print(customer_data)
+# remove bens shipping
+customer_data[1].remove(False)
+print(customer_data)
+# add more customer data to new list
+customer_data_final = customer_data + [["Amit", "Large", True], ["Karim", "X-Large", False]]
+print(customer_data_final)
