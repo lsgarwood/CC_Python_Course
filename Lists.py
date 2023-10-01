@@ -146,3 +146,182 @@ print(gradebook)
 # combine two gradebook lists
 full_gradebook = last_semester_gradebook + gradebook
 print(full_gradebook)
+
+# Adding by Index: Insert
+# Some important things to note:
+# The order and number of the inputs is important. 
+# The .insert() method expects two inputs, the first being a numerical index, followed by any value as the second input.
+# When we insert an element into a list, all elements from the specified index and up to the last index are shifted one index to the right. 
+# This does not apply to inserting an element to the very end of a list as it will simply add an additional index and no other elements will need to shift.
+
+front_display_list = ["Mango", "Filet Mignon", "Chocolate Milk"]
+print(front_display_list)
+# insert pineapple
+front_display_list.insert(0, "Pineapple")
+print(front_display_list)
+
+# Removing by Index: Pop
+
+# The .pop() method takes an optional single input:
+# The index for the element you want to remove
+# The method can be called without a specific index. Using .pop() without an index will remove whatever the last element of the list is. In our case "Clowns 101" gets removed.
+# The method can be called with an optional specific index to remove
+# We don’t have to save the removed value to any variable if we don’t care to use it late
+
+data_science_topics = ["Machine Learning", "SQL", "Pandas", "Algorithms", "Statistics", "Python 3"]
+print(data_science_topics)
+
+# remove python
+data_science_topics.pop()
+print(data_science_topics)
+# remove algorithms
+data_science_topics.pop(3)
+print(data_science_topics)
+
+# consecutive lists: Range
+# The range() function is unique in that it creates a range object
+# In order to use this object as a list, we have to first convert it using another built-in function called list().
+# The list() function takes in a single input for the object you want to convert
+
+#list 0 to 8
+number_list = range(9)
+print(list(number_list))
+#list 0 to 7
+zero_to_seven = range(8)
+print(list(zero_to_seven))
+
+# By default, range() creates a list starting at 0. However, if we call range() with two inputs, we can create a list that starts at a different number
+my_list = range(2, 9)
+print(list(my_list)) # output [2, 3, 4, 5, 6, 7, 8]
+
+# If we use a third input, we can create a list that “skips” numbers.
+# range(2, 9, 2) will give us a list where each number is 2 greater than the previous number:
+
+my_range2 = range(2, 9, 2)
+print(list(my_range2)) # output [2, 4, 6, 8]
+
+# Length
+long_list = [1, 5, 6, 7, -23, 69.5, True, "very", "long", "list", "that", "keeps", "going.", "Let's", "practice", "getting", "the", "length"]
+
+big_range = range(2, 3000, 100)
+
+# length of long_list
+long_list_len = len(long_list)
+print(long_list_len)
+# length of big_range
+big_range_length = len(big_range)
+print(big_range_length)
+
+# Slicing Lists 1
+suitcase = ["shirt", "shirt", "pants", "pants", "pajamas", "books"]
+# slice first two elements
+beginning = suitcase[0:2]
+print(beginning)
+# make new slice, and print
+middle = suitcase[2:4]
+print(middle)
+
+# Slicing Lists 2
+# If we want to select the first n elements of a list, we could use: list[:n]
+fruits = ["apple", "cherry", "pineapple", "orange", "mango"]
+fruits[:3] # output ['apple', 'cherry', 'pineapple']
+
+# We can do something similar when we want to slice the last n elements in a list
+print(fruits[-2:]) # output ['orange', 'mango']
+
+# Negative indices can also accomplish taking all but n last elements of a list
+fruits[:-1] # output ['apple', 'cherry', 'pineapple', 'orange']
+
+# exercise
+suitcase = ["shirt", "shirt", "pants", "pants", "pajamas", "books"] 
+# last two elements
+last_two_elements = suitcase[-2:]
+print(last_two_elements)
+# all but last three elements
+slice_off_last_three = suitcase[:-3]
+print(slice_off_last_three)
+
+# Counting in a list
+letters = ["m", "i", "s", "s", "i", "s", "s", "i", "p", "p", "i"]
+# If we want to know how many times i appears in this word, we can use the list method called .count()
+num_i = letters.count("i")
+print(num_i) # output 4
+
+# Notice that since .count() returns a value, we can assign it to a variable to use it.
+# We can even use .count() to count element appearances in a two-dimensional list
+number_collection = [[100, 200], [100, 200], [475, 29], [34, 34]] 
+# how often [100, 200] appears
+num_pairs = number_collection.count([100, 200])
+print(num_pairs) # output 2
+
+votes = ["Jake", "Jake", "Laurie", "Laurie", "Laurie", "Jake", "Jake", "Jake", "Laurie", "Cassie", "Cassie", "Jake", "Jake", "Cassie", "Laurie", "Cassie", "Jake", "Jake", "Cassie", "Laurie"]
+# how many votes for jake
+jake_votes = votes.count("Jake")
+print(jake_votes) # output 9
+ 
+# Sorting Lists 1
+names = ["Xander", "Buffy", "Angel", "Willow", "Giles"]
+names.sort()
+print(names) # output ['Angel', 'Buffy', 'Giles', 'Willow', 'Xander']
+# As we can see, the .sort() method sorted our list of names in alphabetical order
+# .sort() also provides us the option to go in reverse
+names.sort(reverse=True)
+print(names) # output ['Xander', 'Willow', 'Giles', 'Buffy', 'Angel']
+
+# Note: The .sort() method does not return any value and thus does not need to be assigned to a variable since it modifies the list directly. 
+# If we do assign the result of the method, it would assign the value of None to the variable
+
+# Checkpoint 1 & 2
+addresses = ["221 B Baker St.", "42 Wallaby Way", "12 Grimmauld Place", "742 Evergreen Terrace", "1600 Pennsylvania Ave", "10 Downing St."]
+addresses.sort()
+print(addresses)
+# Checkpoint 3
+names = ["Ron", "Hermione", "Harry", "Albus", "Sirius"]
+names.sort()
+# Checkpoint 4 & 5
+cities = ["London", "Paris", "Rome", "Los Angeles", "New York"]
+cities.sort(reverse=True)
+print(cities)
+
+# Sorting Lists 2
+# The sorted() function is different from the .sort() method in two ways:
+# It comes before a list, instead of after as all built-in functions do.
+# It generates a new list rather than modifying the one that already exists
+
+names = ["Xander", "Buffy", "Angel", "Willow", "Giles"]
+# create a new list, called sorted_names
+sorted_names = sorted(names)
+print(sorted_names) # output ['Angel', 'Buffy', 'Giles', 'Willow', 'Xander']
+# note that using sorted did not change names
+
+# Review
+inventory = ["twin bed", "twin bed", "headboard", "queen bed", "king bed", "dresser", "dresser", "table", "table", "nightstand", "nightstand", "king bed", "king bed", "twin bed", "twin bed", "sheets", "sheets", "pillow", "pillow"]
+
+# how many items in warehouse len()
+inventory_len = len(inventory)
+
+# select first element
+first = inventory[0]
+
+# select last element
+last = inventory[-1]
+
+# select items in the inventory - index 2, upto not incl. 6
+inventory_2_6 = inventory[2:6]
+
+# first three items
+first_3 = inventory[:3]
+
+# how many twin beds?
+twin_beds = inventory.count("twin bed")
+
+# remove 5th element
+removed_item = inventory.pop(4)
+
+# insert at 11th
+inventory.insert(10, "19th Century Bed Frame")
+
+# sort inventory
+inventory.sort() 
+# or
+inventory = sorted(inventory)
