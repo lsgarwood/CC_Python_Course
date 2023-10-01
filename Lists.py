@@ -121,3 +121,28 @@ print(customer_data)
 # add more customer data to new list
 customer_data_final = customer_data + [["Amit", "Large", True], ["Karim", "X-Large", False]]
 print(customer_data_final)
+
+# Gradebook Exercise
+last_semester_gradebook = [["politics", 80], ["latin", 96], ["dance", 97], ["architecture", 65]]
+
+subjects = ["physics", "calculus", "poetry", "history"]
+grades = [98, 97, 85, 88]
+
+# create combined list
+gradebook = [["physics", 98], ["calculus", 97], ["poetry", 85], ["history", 88]]
+
+# append new list
+gradebook.append(["computer science", 100])
+# append another list
+gradebook.append(["visual arts", 93])
+# modify last grade
+gradebook[-1][-1] = gradebook[-1][-1] + 5
+# remove poetry grade
+gradebook[2].remove(85)
+# append a pass to poetry calss
+gradebook[2].append("Pass")
+print(gradebook)
+
+# combine two gradebook lists
+full_gradebook = last_semester_gradebook + gradebook
+print(full_gradebook)
