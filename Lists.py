@@ -296,32 +296,55 @@ print(sorted_names) # output ['Angel', 'Buffy', 'Giles', 'Willow', 'Xander']
 
 # Review
 inventory = ["twin bed", "twin bed", "headboard", "queen bed", "king bed", "dresser", "dresser", "table", "table", "nightstand", "nightstand", "king bed", "king bed", "twin bed", "twin bed", "sheets", "sheets", "pillow", "pillow"]
-
 # how many items in warehouse len()
 inventory_len = len(inventory)
-
 # select first element
 first = inventory[0]
-
 # select last element
 last = inventory[-1]
-
 # select items in the inventory - index 2, upto not incl. 6
 inventory_2_6 = inventory[2:6]
-
 # first three items
 first_3 = inventory[:3]
-
 # how many twin beds?
 twin_beds = inventory.count("twin bed")
-
 # remove 5th element
 removed_item = inventory.pop(4)
-
 # insert at 11th
 inventory.insert(10, "19th Century Bed Frame")
-
 # sort inventory
 inventory.sort() 
 # or
 inventory = sorted(inventory)
+
+# Pizza exercise
+# toppings list
+toppings = ["pepperoni", "pineapple", "cheese", "sausage", "olives", "anchovies","mushrooms"]
+# prices list
+prices = [2, 6, 1, 3, 2, 7, 2]
+# how many $2 slices
+num_two_dollar_slices = prices.count(2)
+print(num_two_dollar_slices)
+# length of toppings list
+num_pizzas = len(toppings)
+# print
+print(f"We sell {num_pizzas} different kinds of pizza!")
+# new 2d list
+pizza_and_prices = [[2, "pepperoni"], [6, "pineapple"], [1, "cheese"], [3, "sausage"], [2, "olives"], [7, "anchovies"], [2, "mushrooms"]]
+# print
+print(pizza_and_prices)
+# sort into ascending price
+pizza_and_prices.sort()
+print(pizza_and_prices)
+# store first element
+cheapest_pizza = pizza_and_prices[0]
+# most expensive
+priciest_pizza = pizza_and_prices[-1]
+# remove anchovies
+pizza_and_prices.pop()
+# add peppers
+pizza_and_prices.insert(4, [2.5, "peppers"])
+print(pizza_and_prices)
+# three cheapest
+three_cheapest = pizza_and_prices[:3]
+print(three_cheapest)
