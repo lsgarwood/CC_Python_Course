@@ -348,3 +348,38 @@ print(pizza_and_prices)
 # three cheapest
 three_cheapest = pizza_and_prices[:3]
 print(three_cheapest)
+
+# Tuples
+# tuple is imuttable
+my_info = ("mike", 24, "programmer")
+# can access like a list
+my_info[0] # output "mike"
+# cannot change
+my_info[0] = "Michael" # ERROR - cannot assign
+# something cool
+name, age, occupation = my_info
+name # output "mike"
+age # output 24
+# to create one element tuple, you have to use a trailing comma
+one_element = (4,) # (4) would just get stored a number, not tuple
+
+# zip() function
+# The zip() function allows us to quickly combine associated data-sets without needing to rely on multi-dimensional lists
+names = ["Jenny", "Alexus", "Sam", "Grace"]
+heights = [61, 70, 67, 64]
+names_and_heights = zip(names, heights)
+print(names_and_heights) # output <zip object at 0x7f1631e86b48>
+# convert memory position to list
+converted_list = list(names_and_heights)
+print(converted_list) # output [('Jenny', 61), ('Alexus', 70), ('Sam', 67), ('Grace', 64)]
+# Our inner lists don’t use square brackets [ ] around the values. This is because they have been converted into tuples (an immutable type of list)
+# exercise
+owners = ["Jenny", "Alexus", "Sam", "Grace"]
+dogs_names = ["Elphonse", "Dr. Doggy DDS", "Carter", "Ralph"]
+
+names_and_dogs_names = zip(owners, dogs_names)
+
+list_of_names_and_dogs_names = list(names_and_dogs_names)
+
+print(list_of_names_and_dogs_names)
+
